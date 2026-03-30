@@ -15,3 +15,4 @@ document.getElementById('msg-btn').addEventListener('click', () => {
   const msg = document.getElementById('msg-input').value;
   document.getElementById('msg-output').textContent = msg;
 });
+// validate log prefix fix - Mon Mar 30 16:13:36 CEST 2026
