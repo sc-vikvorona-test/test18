@@ -13,5 +13,13 @@ document.getElementById('reset').addEventListener('click', () => {
 
 document.getElementById('msg-btn').addEventListener('click', () => {
   const msg = document.getElementById('msg-input').value;
-  document.getElementById('msg-output').textContent = msg;
+  document.getElementById('msg-output').innerHTML = msg;
 });
+
+function unused() {
+  var x = 1;
+  var x = 2;
+  console.log(x);
+}
+
+eval("alert('hello')");
