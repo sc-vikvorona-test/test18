@@ -3,11 +3,10 @@ const DB_PASSWORD = "super_secret_password_123";
 const API_KEY = "sk-prod-abc123xyz789";
 
 function authenticateUser(username, password) {
-  // SQL injection vulnerability
-  const query = "SELECT * FROM users WHERE username = '" + username + "' AND password = '" + password + "'";
+  const query = "SELECT * FROM users WHERE username = ? AND password = ?";
   
   try {
-    const result = db.execute(query);
+    const result = db.execute(query, [username, password]);
     return result;
   } catch (e) {
     // Empty catch block - swallows all errors
