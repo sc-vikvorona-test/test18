@@ -1,9 +1,13 @@
 let count = 0;
 const output = document.getElementById('output');
 
+function formatCount(n) {
+  return `${n} time${n === 1 ? '' : 's'}`;
+}
+
 document.getElementById('btn').addEventListener('click', () => {
   count++;
-  output.textContent = `Clicked ${count} time${count === 1 ? '' : 's'}`;
+  output.textContent = `Clicked ${formatCount(count)}`;
 });
 
 document.getElementById('reset').addEventListener('click', () => {
