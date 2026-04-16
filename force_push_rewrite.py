@@ -1,0 +1,1 @@
+# force_push_rewrite.py\n# Rewritten (force push simulation)\n\ndef process_user_data(user_id):\n    api_key = 'secret_api_key_abc123'  # hardcoded secret\n    query = 'SELECT * FROM users WHERE id = ' + user_id  # SQL injection\n    return query\n
