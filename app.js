@@ -1,14 +1,13 @@
-// Refactor #10: extract counter module
-const counter = (() => {
-  let value = 0;
-  return {
-    increment() { value++; return value; },
-    decrement() { value = Math.max(0, value - 1); return value; },
-    reset() { value = 0; },
-    get() { return value; },
-  };
-})();
+// Refactor #10 AMENDED: simpler approach after review feedback
+class Counter {
+  #value = 0;
 
+  increment() { return ++this.#value; }
+  reset() { this.#value = 0; }
+  get value() { return this.#value; }
+}
+
+const counter = new Counter();
 const output = document.getElementById('output');
 
 document.getElementById('btn').addEventListener('click', () => {
