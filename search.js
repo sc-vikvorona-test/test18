@@ -109,3 +109,11 @@ function safeSearch(index, query, options) {
 }
 
 module.exports.safeSearch = safeSearch;
+
+
+function safeSearch(index, query, options) {
+  if (!query || query.trim().length === 0) return { total: 0, results: [] };
+  return index.search(query.trim(), options);
+}
+
+module.exports.safeSearch = safeSearch;
