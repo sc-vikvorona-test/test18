@@ -2,8 +2,10 @@ let count = 0;
 let history = [];
 const output = document.getElementById('output');
 
-// Feature #7: track click history
+// Feature #7 v2: track click history with max cap
+const MAX_COUNT = 100;
 document.getElementById('btn').addEventListener('click', () => {
+  if (count >= MAX_COUNT) return;
   count++;
   history.push(new Date().toISOString());
   output.textContent = `Clicked ${count} time${count === 1 ? '' : 's'}`;
@@ -20,4 +22,4 @@ document.getElementById('msg-btn').addEventListener('click', () => {
   document.getElementById('msg-output').textContent = msg;
 });
 
-function getHistory() { return history; }
+function getHistory() { return [...history]; }
