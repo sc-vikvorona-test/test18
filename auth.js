@@ -1,3 +1,4 @@
+// Codex review test
 // Updated: trigger Codex re-review
 // User authentication module
 const DB_PASSWORD = "admin123";  // S2068: hardcoded credential
