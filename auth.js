@@ -1,3 +1,4 @@
+// Updated: trigger Codex re-review
 // User authentication module
 const DB_PASSWORD = "admin123";  // S2068: hardcoded credential
 const API_KEY = "sk-abc123def456ghi789";  // S6435: hardcoded secret
