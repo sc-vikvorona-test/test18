@@ -15,3 +15,19 @@ document.getElementById('msg-btn').addEventListener('click', () => {
   const msg = document.getElementById('msg-input').value;
   document.getElementById('msg-output').textContent = msg;
 });
+
+// Debounce utility: delay function execution until after wait ms of inactivity
+function debounce(fn, wait) {
+  let timer;
+  return function (...args) {
+    clearTimeout(timer);
+    timer = setTimeout(() => fn.apply(this, args), wait);
+  };
+}
+
+const msgInput = document.getElementById('msg-input');
+const msgOutput = document.getElementById('msg-output');
+
+msgInput.addEventListener('input', debounce((e) => {
+  msgOutput.textContent = e.target.value;
+}, 300));
